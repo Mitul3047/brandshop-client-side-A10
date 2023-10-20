@@ -31,6 +31,13 @@ const Navbar = () => {
         </li>
         <li>
             <NavLink
+                to="/cart"
+            >
+                Cart
+            </NavLink>
+        </li>
+        <li>
+            <NavLink
                 to="/login"
             >
                 Login

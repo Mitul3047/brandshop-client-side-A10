@@ -32,7 +32,9 @@ const BrandProductesCard = ({ product }) => {
         <Link to={`/details/${_id}`}>
         <button className="btn ">Details</button>
         </Link>
+        <Link to = {`/update/${_id}`}>
         <button className="btn">Update</button>
+        </Link>
       </div>
       </div>
       
