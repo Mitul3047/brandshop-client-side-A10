@@ -4,7 +4,7 @@ import { useState } from "react";
 import BrandsCard from "./BrandsCard";
 
 
-const EventCards = () => {
+const BrandCards = () => {
     const [brands, setBrands] = useState([]);
 
     useEffect(() => {
@@ -32,4 +32,4 @@ const EventCards = () => {
     );
 };
 
-export default EventCards;
+export default BrandCards;

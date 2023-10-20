@@ -1,125 +1,135 @@
-// import Swal from 'sweetalert2'
-
 import Swal from "sweetalert2";
 
-const AddProductes = () => {
-    const handleAddCoffee = event => {
+const AddProducts = () => {
+
+    const handleAddProducts = event =>{
         event.preventDefault();
 
         const form = event.target;
 
         const name = form.name.value;
-        const quantity = form.quantity.value;
-        const supplier = form.supplier.value;
-        const taste = form.taste.value;
-        const category = form.category.value;
-        const details = form.details.value;
+        const brand_name = form.brand_name.value;
+        const type = form.type.value;
+        const price = form.price.value;
+        const description = form.description.value;
+        const rating = form.rating.value;
         const photo = form.photo.value;
 
-        const newCoffee = { name, quantity, supplier, taste, category, details, photo }
-
-        console.log(newCoffee);
-
+        const newProducts = {name, brand_name, type, price, description, rating, photo}
+        console.log(newProducts)
+        // fetch('http://localhost:5000/product',
         // send data to the server
-        fetch('http://localhost:6000/product', {
+        fetch('http://localhost:3000/product', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(newCoffee)
+            body: JSON.stringify(newProducts)
         })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if(data.insertedId){
-                    Swal.fire({
-                        title: 'Success!',
-                        text: 'Coffee Added Successfully',
-                        icon: 'success',
-                        confirmButtonText: 'Cool'
-                      })
-                }
-            })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+              if(data.insertedId){
+                Swal.fire({
+                    title: ' Success',
+                    text: 'User addedd successfully',
+                    icon: 'success',
+                    confirmButtonText: 'OKk'
+                })
+              }
+        })
     }
-
-
     return (
-        <div className="bg-[#F4F3F0] p-24">
-            <h2 className="text-3xl font-extrabold">Add a Coffee</h2>
-            <form onSubmit={handleAddCoffee}>
-                {/* form name and quantity row */}
-                <div className="md:flex mb-8">
-                    <div className="form-control md:w-1/2">
-                        <label className="label">
-                            <span className="label-text">Coffee Name</span>
-                        </label>
-                        <label className="input-group">
-                            <input type="text" name="name" placeholder="Coffee Name" className="input input-bordered w-full" />
-                        </label>
-                    </div>
-                    <div className="form-control md:w-1/2 ml-4">
-                        <label className="label">
-                            <span className="label-text">Available Quantity</span>
-                        </label>
-                        <label className="input-group">
-                            <input type="text" name="quantity" placeholder="Available Quantity" className="input input-bordered w-full" />
-                        </label>
-                    </div>
+        <div className="px-10">
+          
+             <div className="rounded-lg my-7 bg-gradient-to-r from-purple-500 to-pink-500 p-24">
+            <h2 className="text-3xl text-white justify-center text-center font-extrabold">Add a New Products</h2>
+            <form onSubmit={handleAddProducts} >
+                {/* form name and quantity row  */}
+                <div className="md:flex gap-5">
+                <div className="form-control md:w-1/2">
+  <label className="label">
+    <span className="label-text text-xl text-white">Name</span>
+  </label>
+  <label className="input-group">
+   
+    <input type="text" name="name" placeholder="Enter products name" className="input input-bordered w-full" />
+  </label>
+</div>
+                <div className="form-control w-1/2">
+  <label className="label">
+    <span className="label-text text-white text-xl">Brand Name</span>
+  </label>
+  <label className="input-group">
+  
+    <input type="text" name="brand_name" placeholder="Brand Name" className="input input-bordered w-full" />
+  </label>
+</div>
                 </div>
-                {/* form supplier row */}
-                <div className="md:flex mb-8">
-                    <div className="form-control md:w-1/2">
-                        <label className="label">
-                            <span className="label-text">Supplier Name</span>
-                        </label>
-                        <label className="input-group">
-                            <input type="text" name="supplier" placeholder="Supplier Name" className="input input-bordered w-full" />
-                        </label>
-                    </div>
-                    <div className="form-control md:w-1/2 ml-4">
-                        <label className="label">
-                            <span className="label-text">Taste</span>
-                        </label>
-                        <label className="input-group">
-                            <input type="text" name="taste" placeholder="Taste" className="input input-bordered w-full" />
-                        </label>
-                    </div>
-                </div>
-                {/* form category and details row */}
-                <div className="md:flex mb-8">
-                    <div className="form-control md:w-1/2">
-                        <label className="label">
-                            <span className="label-text">Category</span>
-                        </label>
-                        <label className="input-group">
-                            <input type="text" name="category" placeholder="Category" className="input input-bordered w-full" />
-                        </label>
-                    </div>
-                    <div className="form-control md:w-1/2 ml-4">
-                        <label className="label">
-                            <span className="label-text">Details</span>
-                        </label>
-                        <label className="input-group">
-                            <input type="text" name="details" placeholder="Details" className="input input-bordered w-full" />
-                        </label>
-                    </div>
-                </div>
-                {/* form Photo url row */}
-                <div className="mb-8">
-                    <div className="form-control w-full">
-                        <label className="label">
-                            <span className="label-text">Photo URL</span>
-                        </label>
-                        <label className="input-group">
-                            <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered w-full" />
-                        </label>
-                    </div>
-                </div>
-                <input type="submit" value="Add Coffee" className="btn btn-block" />
 
+                {/* form supplier row  */}
+                <div className="flex   gap-5">
+                <div className="form-control md:w-1/2">
+  <label className="label">
+    <span className="label-text text-xl text-white">Type</span>
+  </label>
+  <label className="input-group">
+   
+    <input type="text" name="type" placeholder="Enter coffee Type" className="input input-bordered w-full" />
+  </label>
+</div>
+                <div className="form-control w-1/2">
+  <label className="label">
+    <span className="label-text text-xl text-white">Description</span>
+  </label>
+  <label className="input-group">
+   
+    <input type="text" name="description" placeholder="description" className="input input-bordered w-full" />
+  </label>
+</div>
+                </div>
+
+                {/* form category and details  row */}
+                <div className="md:flex gap-5">
+                <div className="form-control md:w-1/2">
+  <label className="label">
+    <span className="label-text text-xl text-white">Rating</span>
+  </label>
+  <label className="input-group">
+   
+    <input type="text" name="rating" placeholder="Enter rating" className="input input-bordered w-full" />
+  </label>
+</div>
+                <div className="form-control w-1/2">
+  <label className="label">
+    <span className="label-text text-xl text-white">Price</span>
+  </label>
+  <label className="input-group">
+   
+    <input type="text" name="price" placeholder="Price" className="input input-bordered text-xl w-full " />
+  </label>
+</div>
+                </div>
+                 {/* photo  */}
+                <div className="mb-2">
+                <div className="form-control w-full">
+  <label className="label">
+    <span className="label-text">Photo</span>
+  </label>
+  <label className="input-group">
+   
+    <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered w-full" />
+  </label>
+</div>
+ 
+</div> 
+{/* <button className="btn btn-block">block</button>  */}
+        <input type="submit" value="Add products"  className="btn btn-block text-white bg-gradient-to-r  from-pink-500 to-purple-500"/>
             </form>
         </div>
+        </div>
+       
     );
 };
 
-export default AddProductes;
+export default AddProducts;
