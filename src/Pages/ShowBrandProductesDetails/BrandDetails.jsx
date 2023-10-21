@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 const BrandDetails = () => {
     const product = useLoaderData();
     console.log(product);
-    const { brand_name, description, name, photo, price, rating, type, _id } = product;
+    const { brand_name, description, name, photo, price, rating, type } = product;
 
     const addToCart = async () => {
         // Create the data to send to the server

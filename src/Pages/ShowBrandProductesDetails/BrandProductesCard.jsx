@@ -46,4 +46,8 @@ BrandProductesCard.propTypes = {
   product: PropTypes.object
 };
 
+
+
+
+
 export default BrandProductesCard;

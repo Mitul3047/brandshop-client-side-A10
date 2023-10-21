@@ -1,9 +1,12 @@
 import { createContext, useEffect, useState } from "react";
 import PropTypes from 'prop-types';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'
+import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import app from "../Firebase/Firebase";
 
+
+
 export const AuthContext = createContext(null);
+
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 
@@ -11,57 +14,65 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    const createUser = (email, password) => {
-        // No need to set user to true here
-        return createUserWithEmailAndPassword(auth, email, password);
+    const googleLogIn = () => {
+        return signInWithPopup(auth, googleProvider)
+            .catch(error => {
+                console.error("Google Sign-In Error:", error);
+            });
     }
 
-    const logIn = (email, password) => {
-        // No need to set user to true here
-        return signInWithEmailAndPassword(auth, email, password);
+    const createUser = (email, password) => {
+        setLoading(true);
+        return createUserWithEmailAndPassword(auth, email, password)
+            .catch(error => {
+                console.error("Create User Error:", error);
+            });
+    }
+
+    const signIn = (email, password) => {
+        setLoading(true);
+        return signInWithEmailAndPassword(auth, email, password)
+            .catch(error => {
+                console.error("Sign In Error:", error);
+            });
     }
 
     const logOut = () => {
-        // No need to set user to true here
-        return signOut(auth);
-    }
-
-    const googleLogIn = () => {
-        return signInWithPopup(auth, googleProvider);
+        
+        return signOut(auth)
+            
     }
 
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            // Handle the authentication state change here
-            console.log('Current user:', currentUser);
-            setUser(currentUser); // Update the user state
+        const unSubscribe = onAuthStateChanged(auth, currentUser => {
+            console.log('user', currentUser);
+            setUser(currentUser);
             setLoading(false);
         });
-
-        // Return a cleanup function to unsubscribe when the component unmounts
         return () => {
-            unsubscribe();
-        };
+            unSubscribe();
+        }
     }, []);
 
-    const AuthInfo = {
+    const authInfo = {
         user,
+        loading,
         createUser,
-        logIn,
+        signIn,
         logOut,
-        googleLogIn,
-        loading
+        googleLogIn
     }
-    
+
     return (
-        <AuthContext.Provider value={AuthInfo}>
+        <AuthContext.Provider value={authInfo}>
             {children}
         </AuthContext.Provider>
     );
 };
 
 AuthProvider.propTypes = {
-    children: PropTypes.node,
-};
+    children: PropTypes.node
+}
 
 export default AuthProvider;
+

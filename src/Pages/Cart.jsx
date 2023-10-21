@@ -1,9 +1,16 @@
 
+import { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const Cart = () => {
     const loadedProductes = useLoaderData();
+    const [cartData, setCartData] = useState([])
+    useEffect(() => {
+        fetch('http://localhost:3000/cart')
+            .then(r => r.json())
+            .then(data => setCartData(data))
+    }, [])
 
     const handleDelete = (_id) => {
         console.log(_id);
@@ -18,7 +25,7 @@ const Cart = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:3000/cart/${_id}`,{
+                fetch(`http://localhost:3000/cart/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -30,6 +37,8 @@ const Cart = () => {
                                 'Your file has been deleted.',
                                 'success'
                             )
+                            const remaining = cartData.filter((item) => item._id !== _id);
+                            setCartData(remaining)
                         }
                     })
             }
