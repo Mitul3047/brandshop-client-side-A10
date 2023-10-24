@@ -25,12 +25,12 @@ const router = createBrowserRouter([
             {
                 path:'/details/:id',
                 element:<BrandDetails></BrandDetails> ,
-                loader: ({params}) => fetch(`http://localhost:3000/product/${params.id}`)
+                loader: ({params}) => fetch(`https://technology-and-electronic-server-fh0xgd40a.vercel.app/product/${params.id}`)
             },
             {
                 path: '/branddetails/:id',
                 element: <ShowBrandProductes></ShowBrandProductes>,
-                loader: ()=> fetch('http://localhost:3000/product')
+                loader: ()=> fetch('https://technology-and-electronic-server-fh0xgd40a.vercel.app/product')
             },
             {
                 path: '/addproductes',
@@ -39,12 +39,12 @@ const router = createBrowserRouter([
             {
                 path: '/update/:id',
                 element: <UpdateProduct></UpdateProduct>,
-                loader: ({params}) => fetch(`http://localhost:3000/product/${params.id}`)
+                loader: ({params}) => fetch(`https://technology-and-electronic-server-fh0xgd40a.vercel.app/product/${params.id}`)
             },
             {
                 path: '/cart',
                 element: <Cart></Cart>,
-                loader: ()=> fetch('http://localhost:3000/cart')
+                loader: ()=> fetch('https://technology-and-electronic-server-fh0xgd40a.vercel.app/cart')
             },
             {
                 path: '/login',

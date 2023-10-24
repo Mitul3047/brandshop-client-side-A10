@@ -16,7 +16,7 @@ const BrandDetails = () => {
             // Add other relevant data here
         };
 
-        fetch("http://localhost:3000/cart", {
+        fetch("https://technology-and-electronic-server-fh0xgd40a.vercel.app/cart", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

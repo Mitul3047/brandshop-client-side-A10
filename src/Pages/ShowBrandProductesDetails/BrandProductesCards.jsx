@@ -6,6 +6,7 @@ import BrandProductesCard from "./BrandProductesCard";
 
 const BrandProductesCards = () => {
     const loadedCoffees = useLoaderData();
+    console.log('all data',loadedCoffees);
     const [productes, setProductes] = useState(loadedCoffees);
     
   

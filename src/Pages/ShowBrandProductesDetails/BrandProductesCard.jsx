@@ -1,17 +1,11 @@
 import PropTypes from "prop-types";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import { BsFillStarFill } from 'react-icons/Bs';
 import { Link } from "react-router-dom";
 const BrandProductesCard = ({ product }) => {
   const { _id, name, brand_name, type, price, description, rating, photo } = product;
-  const [Brands, setBrands] = useState('')
-  useEffect(() => {
-    fetch('/../brand.json')
-      .then((response) => response.json()) // Invoke json method
-      .then((data) => setBrands(data))
-      .catch((error) => console.error(error)); // Add error handling
-  }, []);
-  console.log(Brands);
+
+
 
   return (
     <div className="card  bg-gray-100 shadow-xl">
@@ -51,3 +45,5 @@ BrandProductesCard.propTypes = {
 
 
 export default BrandProductesCard;
+
+
