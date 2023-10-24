@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
-import { BsStar } from 'react-icons/bs'
+import { BsFillStarFill } from 'react-icons/Bs';
 import { Link } from "react-router-dom";
 const BrandProductesCard = ({ product }) => {
   const { _id, name, brand_name, type, price, description, rating, photo } = product;
@@ -14,12 +14,12 @@ const BrandProductesCard = ({ product }) => {
   console.log(Brands);
 
   return (
-    <div className="card  bg-base-100 shadow-xl">
+    <div className="card  bg-gray-100 shadow-xl">
       <img className="h-[300px] w-[full] rounded-t-lg" src={photo} alt="Shoes" />
       <div className="card-body">
         <h2 className="card-title">
           {name}
-          <div className="flex justify-between items-center flex-row gap-2"><span className="text-yellow-500 inline-block"><BsStar></BsStar></span>{rating}</div>
+          <p className="flex flex-row items-center gap-2 "><span className="inline-block text-yellow-600"><BsFillStarFill></BsFillStarFill></span>{rating}</p>
         </h2>
 
         <div className="card-actions justify-start">

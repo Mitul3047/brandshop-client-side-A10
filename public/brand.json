@@ -1,33 +1,37 @@
 [
     {
       "id": 1,
-      "brand_image": "https://i.ibb.co/RS0JNfx/apple.jpg",
+      "brand_image": "https://i.ibb.co/3r6wpBy/bangyu-wang-omo-Cm0bv-NW4-unsplash.jpg",
       "brand_name": "Apple"
     },
     {
       "id": 2,
-      "brand_image": "https://i.ibb.co/8b9Tmc6/ezgif-com-webp-to-jpg.jpg",
-      "brand_name": "Sony"
+      "brand_image": "https://i.ibb.co/2qs50YF/turag-photography-1u-Qe5-BIi-H8w-unsplash.jpg",
+      "brand_name": "Microsoft"
     },
     {
       "id": 3,
-      "brand_image": "https://i.ibb.co/F5jpgrX/ezgif-com-webp-to-jpg-1.jpg",
-      "brand_name": "Samsung"
-    },
-    {
-      "id": 4,
-      "brand_image": "https://i.ibb.co/vm9QRq4/download-1.jpg",
+      "brand_image": "https://i.ibb.co/G2xQpGW/pawel-czerwinski-fp-ZZEV0u-Qw-A-unsplash.jpg",
       "brand_name": "Google"
     },
     {
-      "id": 5,
-      "brand_image": "https://i.ibb.co/8dd3K5T/intel.jpg",
+      "id": 4,
+      "brand_image": "https://i.ibb.co/bBDtwWW/rubaitul-azad-3-Wh-Pfo-OX888-unsplash.jpg",
       "brand_name": "Intel"
     },
     {
+      "id": 5,
+      "brand_image": "https://i.ibb.co/6wRXRtM/boliviainteligente-7n-Lzbe-Vfj-A4-unsplash.jpg",
+      "brand_name": "Samsung"
+    },
+    {
       "id": 6,
-      "brand_image": "https://i.ibb.co/Yh5XjX6/ezgif-com-webp-to-jpg-2.jpg",
-      "brand_name": "Microsoft"
+      "brand_image": "https://i.ibb.co/Vv6dJ8Z/boliviainteligente-Hv4-KMUMQ4-Rw-unsplash.jpg",
+      "brand_name": "Sony"
     }
   ]
   
+
+
+
+

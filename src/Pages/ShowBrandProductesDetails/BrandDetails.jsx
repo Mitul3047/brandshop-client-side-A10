@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
-
+import { BsFillStarFill } from 'react-icons/Bs';
 const BrandDetails = () => {
     const product = useLoaderData();
     console.log(product);
@@ -52,14 +52,14 @@ const BrandDetails = () => {
 
     return (
         <div className="py-28">
-            <div className="card lg:card-side bg-base-100 w-10/12 mx-auto shadow-xl">
+            <div className="card lg:card-side bg-base-100 w-10/12 mx-auto p-8 shadow-xl">
                 <img className="h-[70vh]" src={photo} alt={name} />
-                <div className="card-body">
-                    <h2 className="card-title text-2xl">{name}</h2>
+                <div className="flex flex-col justify-center ml-6 space-y-4 ">
+                    <h2 className="text-3xl">{name}</h2>
                     <h3 className="text-lg font-semibold">{brand_name}</h3>
                     <h3 className="font-semibold">{type}</h3>
                     <h3 className="font-semibold">$ {price}</h3>
-                    <p>{rating}</p>
+                    <p className="flex flex-row items-center gap-2 "><span className="inline-block text-yellow-600"><BsFillStarFill></BsFillStarFill></span>{rating}</p>
                     <p className="font-semibold">{description}</p>
                     <div className="card-actions">
                         <button className="btn btn-accent text-white" onClick={addToCart}>

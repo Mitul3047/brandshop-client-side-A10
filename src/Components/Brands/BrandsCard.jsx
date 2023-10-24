@@ -8,7 +8,7 @@ const BrandCard = ({ event: brand }) => {
 
     return (
 
-        <Link to={`/branddetails/${id}`}>
+        <Link to={`/branddetails/${brand_name}`}>
             <div className="relative mx-4 mt-4 h-96 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700">
                 <img
                     src={brand_image}

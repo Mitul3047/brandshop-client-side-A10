@@ -12,10 +12,10 @@ const BrandProductesCards = () => {
     return (
       <>
         
-        <h1 className="text-pink-600 text-6xl text-center py-10">Coffee Store</h1>
+        {/* <h1 className="text-pink-600 text-6xl text-center py-10">Productes</h1> */}
   
-        <h1 className='text-6xl text-center my-20 text-purple-600'>Hot Hot Cold Coffee: {productes.length}</h1>
-        <div className='grid md:grid-cols-3 gap-4'>
+        
+        <div className='grid md:grid-cols-3 gap-4 p-4'>
           {
             productes.map(product => <BrandProductesCard
               key={product._id}
