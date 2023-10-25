@@ -24,10 +24,10 @@ const BrandProductesCard = ({ product }) => {
         <h2>${price}</h2>
         <div className="btn-group justify-evenly">
         <Link to={`/details/${_id}`}>
-        <button className="btn ">Details</button>
+        <button className="btn btn-accent ">Details</button>
         </Link>
         <Link to = {`/update/${_id}`}>
-        <button className="btn">Update</button>
+        <button className="btn btn-secondary">Update</button>
         </Link>
       </div>
       </div>

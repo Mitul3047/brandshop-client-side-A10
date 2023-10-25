@@ -1,8 +1,13 @@
-# React + Vite
+1. There are six cards on the project's main page. Upon selecting a card, you will be sent to the product page where a slider and many cards pulled from a database are displayed.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+2. Since the "Add Product" page is a private area, you must finish the registration and login procedures before adding a product.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+3. There are two buttons on the cards of the slider page that allow you to update product data.
+
+
+4. By selecting the "Details" option, you may reach the detailed route; however, keep in mind that only logged-in users are able to view it since it is a private route. You can add things to your cart in the details path, and they will be kept on the "My Cart" page.
+
+
+5. You can delete goods from your cart page.

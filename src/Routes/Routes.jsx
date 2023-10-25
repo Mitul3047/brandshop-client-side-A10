@@ -8,6 +8,7 @@ import ShowBrandProductes from "../Pages/ShowBrandProductesDetails/ShowBrandProd
 import BrandDetails from "../Pages/ShowBrandProductesDetails/BrandDetails";
 import Cart from "../Pages/Cart";
 import UpdateProduct from "../Pages/UpdateProduct";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/details/:id',
-                element:<BrandDetails></BrandDetails> ,
+                element:<PrivateRoute><BrandDetails></BrandDetails></PrivateRoute> ,
                 loader: ({params}) => fetch(`https://technology-and-electronic-server-fh0xgd40a.vercel.app/product/${params.id}`)
             },
             {
@@ -34,16 +35,16 @@ const router = createBrowserRouter([
             },
             {
                 path: '/addproductes',
-                element: <AddProductes></AddProductes>,
+                element: <PrivateRoute><AddProductes></AddProductes></PrivateRoute>,
             },
             {
                 path: '/update/:id',
-                element: <UpdateProduct></UpdateProduct>,
+                element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
                 loader: ({params}) => fetch(`https://technology-and-electronic-server-fh0xgd40a.vercel.app/product/${params.id}`)
             },
             {
                 path: '/cart',
-                element: <Cart></Cart>,
+                element: <PrivateRoute><Cart></Cart></PrivateRoute>,
                 loader: ()=> fetch('https://technology-and-electronic-server-fh0xgd40a.vercel.app/cart')
             },
             {
