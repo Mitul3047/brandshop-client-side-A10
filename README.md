@@ -23,7 +23,7 @@ The website showcases products from renowned brands within the Technology and El
 - **Error Handling:** Display errors for registration and login based on specified criteria.
 - **404 Page:** Not found page for invalid routes.
 
-## Bonus Features
+## Special features
 
 - **Git Commits & README:** Minimum 10 meaningful commits (client-side) and 5 commits (server-side), detailed project description in the README with the client-side live link.
 - **Persistent Private Routes:** Retains user login after page reload.
